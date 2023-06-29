@@ -1,4 +1,13 @@
 <h1>新規投稿</h1>
+<!-- バリデーションによるエラーメッセージを表示する -->
+<% if @list.errors.any? %>  <!-- errorsはモデルにバリデーションをかけたときに、発生したエラーの内容を確認できるメソッドです。any?と組み合わせるとエラーが発生しているか判定できる-->
+  <%= @list.errors.count %>件のエラーが発生しました。
+  <ul>
+      <% @list.errors.full_messages.each do |message| %>  <!-- full_messagesと組み合わせることで、エラーの内容を出漁できる。エラー文は配列で保存されているのでeachを使用-->
+        <li><%= message %></li>
+      <% end %>
+  </ul>
+<% end %>
 
 <!-- form_withヘルパー部分-->
 <%= form_with model: @list do |f| %>
@@ -6,7 +15,7 @@
   <%= f.text_field :title %>
 
   <h4>本文</h4>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, :size=>"60×10" %>
 
   <%= f.submit '投稿' %>
 

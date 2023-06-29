@@ -1,3 +1,7 @@
+/*===================================================================
+             全てのビューに反映されるCSSファイル
+====================================================================*/
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +17,50 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+
+＊ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+header {
+  width: 90%; /*横幅*/
+  padding: 15px 0; /*上下、左右の内側余白*/
+  margin: 30px auto 0; /*外側余白*/
+  text-align: center; /*文字の位置*/
+  border-top: solid 5px #000000; /*下線の設定設定*/
+}
+
+header .headline {
+  font-size: 32px;
+}
+
+nav {
+  width: 880px;
+  margin: 0 auto;
+  border-top: solid 0.7px #000000;
+  border-bottom: solid 0.7px #000000;
+}
+
+.nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+main {
+  width: 880px;
+  margin: 0 auto;
+}
+
